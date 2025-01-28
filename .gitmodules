@@ -8,8 +8,9 @@
   branch = main
 [submodule "ccpp/physics"]
   path = ccpp/physics
-  url = https://github.com/ufs-community/ccpp-physics
-  branch = ufs/dev
+#  url = https://github.com/ufs-community/ccpp-physics
+  url = https://github.com/BoYang-NOAA/ccpp-physics
+  branch = ec_ngwd
 [submodule "upp"]
   path = upp
   url = https://github.com/NOAA-EMC/UPP
