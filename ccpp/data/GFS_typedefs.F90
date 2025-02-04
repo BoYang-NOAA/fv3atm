@@ -1155,6 +1155,7 @@ module GFS_typedefs
     logical              :: do_ugwp_v1           !< flag for version 1 ugwp GWD
     logical              :: do_ugwp_v1_orog_only !< flag for version 1 ugwp GWD (orographic drag only)
     logical              :: do_ugwp_v1_w_gsldrag !< flag for version 1 ugwp with OGWD of GSL
+    logical              :: do_ngw_ec            !< flag for ecmwf ngw  
     logical              :: mstrat          !< flag for moorthi approach for stratus
     logical              :: moist_adj       !< flag for moist convective adjustment
     logical              :: cscnv           !< flag for Chikira-Sugiyama convection
@@ -3700,6 +3701,7 @@ module GFS_typedefs
     logical              :: do_ugwp_v1           = .false.      !< flag for version 1 ugwp GWD
     logical              :: do_ugwp_v1_orog_only = .false.      !< flag for version 1 ugwp GWD (orographic drag only)
     logical              :: do_ugwp_v1_w_gsldrag = .false.      !< flag for version 1 ugwp GWD (orographic drag only)
+    logical              :: do_ngw_ec            = .false.      !< flag for version 1 ngw
 !--- vay-2018
     logical              :: ldiag_ugwp      = .false.                 !< flag for UGWP diag fields
     logical              :: ugwp_seq_update = .false.                 !< flag for updating winds between UGWP steps
@@ -4135,7 +4137,7 @@ module GFS_typedefs
                                gwd_opt, do_ugwp_v0, do_ugwp_v0_orog_only,                   &
                                do_ugwp_v0_nst_only,                                         &
                                do_gsl_drag_ls_bl, do_gsl_drag_ss, do_gsl_drag_tofd,         &
-                               do_gwd_opt_psl,                                              &
+                               do_gwd_opt_psl, do_ngw_ec,                                   &
                                do_ugwp_v1, do_ugwp_v1_orog_only,  do_ugwp_v1_w_gsldrag,     &
                                ugwp_seq_update, var_ric, coef_ric_l, coef_ric_s, hurr_pbl,  &
                                do_myjsfc, do_myjpbl,                                        &
@@ -5055,6 +5057,7 @@ module GFS_typedefs
     Model%do_gsl_drag_ss       = do_gsl_drag_ss
     Model%do_gsl_drag_tofd     = do_gsl_drag_tofd
     Model%do_gwd_opt_psl       = do_gwd_opt_psl
+    Model%do_ngw_ec            = do_ngw_ec
     Model%do_ugwp_v1           = do_ugwp_v1
     Model%do_ugwp_v1_orog_only = do_ugwp_v1_orog_only
     Model%do_ugwp_v1_w_gsldrag = do_ugwp_v1_w_gsldrag
@@ -6926,6 +6929,7 @@ module GFS_typedefs
       print *, ' do_gsl_drag_tofd     : ', Model%do_gsl_drag_tofd
       print *, ' do_gwd_opt_psl       : ', Model%do_gwd_opt_psl
       print *, ' do_ugwp_v1           : ', Model%do_ugwp_v1
+      print *, ' do_ngw_ec            : ', Model%do_ngw_ec
       print *, ' do_ugwp_v1_orog_only : ', Model%do_ugwp_v1_orog_only
       print *, ' do_ugwp_v1_w_gsldrag : ', Model%do_ugwp_v1_w_gsldrag
       print *, ' hurr_pbl          : ', Model%hurr_pbl
