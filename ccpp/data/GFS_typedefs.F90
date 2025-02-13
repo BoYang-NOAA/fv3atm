@@ -1155,7 +1155,7 @@ module GFS_typedefs
     logical              :: do_ugwp_v1           !< flag for version 1 ugwp GWD
     logical              :: do_ugwp_v1_orog_only !< flag for version 1 ugwp GWD (orographic drag only)
     logical              :: do_ugwp_v1_w_gsldrag !< flag for version 1 ugwp with OGWD of GSL
-    logical              :: do_ngw_ec            !< flag for ecmwf ngw  
+    logical              :: do_ngw_ec            !< flag for ecmwf ngw non-stationary GW 
     logical              :: mstrat          !< flag for moorthi approach for stratus
     logical              :: moist_adj       !< flag for moist convective adjustment
     logical              :: cscnv           !< flag for Chikira-Sugiyama convection
